@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
-public class BasketballMachine : MonoBehaviour
+public class SkeeballTrigger : MonoBehaviour
 {
-    [SerializeField] private LayerMask AllowedLayers = ~0;
+    //[SerializeField] private LayerMask AllowedLayers = default;
+    private Skeeball _parent = default;
     public UnityEvent GoalReachedEvent = default;
 
     private Collider _thisCollider = default;
@@ -19,13 +20,13 @@ public class BasketballMachine : MonoBehaviour
             GoalReachedEvent = new UnityEvent();
         }
         _thisCollider = GetComponent<Collider>();
+        _parent = transform.parent.GetComponent<Skeeball>();
     }
 
-    private void OnTriggerExit(Collider other) 
+    private void OnTriggerEnter(Collider other) 
     {
-        // If the layer is in the layermask, go ahead with the position check.
-        // If the bottom of our collider is above the top of the other collider, invoke the event.
-        if ((AllowedLayers.value & 1 << other.gameObject.layer) != 0 && other.bounds.max.y < _thisCollider.bounds.min.y)
+        // If the other is in our layermask, invoke the event.
+        if ((_parent.AllowedLayers.value & 1 << other.gameObject.layer) != 0)
         {
             GoalReachedEvent.Invoke();
         }
