@@ -6,19 +6,26 @@ public class TestPlayer : MonoBehaviour
 {
     [SerializeField] private float forceForce = default;
     [SerializeField] private Material baseMaterial = default;
+    [SerializeField] private Vector3 startPosition = default;
 
-    private void Start() {
+    private void Start() 
+    {
         baseMaterial = GetComponent<MeshRenderer>().material;
+        startPosition =  transform.position;
     }
     private void Update() 
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * forceForce, ForceMode.Force);
+            GetComponent<Rigidbody>().AddForce(Vector3.up * forceForce, ForceMode.VelocityChange);
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
             GetComponent<MeshRenderer>().material = baseMaterial;
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            transform.position = startPosition;
         }
     }
 
