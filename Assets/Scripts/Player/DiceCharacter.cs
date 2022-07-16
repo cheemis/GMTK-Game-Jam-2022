@@ -43,6 +43,11 @@ public class DiceCharacter : MonoBehaviour
         //{
         //    Vector3 runDirection = GetRunDirection(physCache.ForwardXZ, slopeAngle, groundPoint, groundNormal);
         //}
+
+        if(transform.position.y < 0f) 
+        {
+            transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
+        }
     }
 
     public void RagdollDash(Vector3 inputDir) 
