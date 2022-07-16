@@ -76,7 +76,7 @@ Material:
     - _EdgeFade: 0.66
     - _FurDensity: 1.06
     - _FurHardness: 1
-    - _FurLength: 0.001
+    - _FurLength: 0.0014
     - _FurShading: 0.275
     - _FurThinness: 5.54
     - _GlossMapScale: 1
