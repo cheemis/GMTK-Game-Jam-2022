@@ -1,9 +1,25 @@
 fileFormatVersion: 2
-guid: de8ba3e83cfe92d4989c9a95122f9451
+guid: d5d6d4741cb580644993b27276dd4edd
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
-  externalObjects: {}
+  internalIDToNameTable:
+  - first:
+      74: -8468664832091945311
+    second: Dice|Camera.001|Cube.001|Cube.001Action
+  - first:
+      74: 8964609203477791008
+    second: Dice|Cube.001|Cube.001|Cube.001Action
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: 375801aa5bc54b34491b16420d142955, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: 93908221ff941f548b3f374856a78b3a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,7 +51,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -88,7 +104,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.5
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
