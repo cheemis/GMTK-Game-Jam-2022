@@ -19,7 +19,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &431992693
 Transform:
@@ -668,7 +668,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2272
+  m_VersionIndex: 2275
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -778,7 +778,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8758009897226127500
 Transform:
@@ -811,7 +811,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &849786853446680582
 Transform:
@@ -843,7 +843,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8877942543280743471
 Transform:
@@ -876,7 +876,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6971736277427048
 Transform:
@@ -913,7 +913,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4694593331896050127
 Transform:
@@ -946,7 +946,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3347502668940266684
 Transform:
@@ -980,7 +980,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3347502670321317140
 Transform:
@@ -1028,7 +1028,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3347502670479083841
 Transform:
@@ -7206,7 +7206,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 18480
+  m_VersionIndex: 18483
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7322,7 +7322,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8807240281857518908
 Transform:
@@ -7416,7 +7416,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3836294914389971548
 Transform:
@@ -7449,7 +7449,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5802806686436102004
 Transform:
@@ -7485,7 +7485,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &155390313475952736
 Transform:
@@ -7616,9 +7616,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2960306602190118112, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
       propertyPath: m_Name
       value: Arcade Machine (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de02496bcb2922341b812118d6550c82, type: 3}
@@ -7678,9 +7694,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2960306602190118112, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
       propertyPath: m_Name
       value: Arcade Machine (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de02496bcb2922341b812118d6550c82, type: 3}
@@ -7740,9 +7772,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2960306602190118112, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
       propertyPath: m_Name
       value: Arcade Machine (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de02496bcb2922341b812118d6550c82, type: 3}
@@ -7802,9 +7850,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2960306602190118112, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
       propertyPath: m_Name
       value: Arcade Machine
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de02496bcb2922341b812118d6550c82, type: 3}
@@ -7880,6 +7944,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrapsTable (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 410cf8fb9cf40fd4abcb40a1a1c8703c, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 410cf8fb9cf40fd4abcb40a1a1c8703c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 410cf8fb9cf40fd4abcb40a1a1c8703c, type: 3}
 --- !u!4 &3025871995500025824 stripped
@@ -7938,9 +8010,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2960306602190118112, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
       propertyPath: m_Name
       value: Arcade Machine (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de02496bcb2922341b812118d6550c82, type: 3}
@@ -8000,9 +8088,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2960306602190118112, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
       propertyPath: m_Name
       value: Arcade Machine (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de02496bcb2922341b812118d6550c82, type: 3}
@@ -8078,6 +8182,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhackaMole
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9b05780a60df36449f9a7313472d157, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9b05780a60df36449f9a7313472d157, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9b05780a60df36449f9a7313472d157, type: 3}
 --- !u!4 &3025871995126810431 stripped
@@ -8136,9 +8248,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2960306602190118112, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
       propertyPath: m_Name
       value: Arcade Machine (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de02496bcb2922341b812118d6550c82, type: 3}
@@ -8214,6 +8342,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeeball (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bdb514c7c0f1504caf514f1c23a9ef0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bdb514c7c0f1504caf514f1c23a9ef0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bdb514c7c0f1504caf514f1c23a9ef0, type: 3}
 --- !u!4 &3025871994636454393 stripped
@@ -8272,9 +8408,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2960306602190118112, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
       propertyPath: m_Name
       value: Arcade Machine (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de02496bcb2922341b812118d6550c82, type: 3}
@@ -8350,6 +8502,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeeball
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bdb514c7c0f1504caf514f1c23a9ef0, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9bdb514c7c0f1504caf514f1c23a9ef0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bdb514c7c0f1504caf514f1c23a9ef0, type: 3}
 --- !u!4 &3025871994653766904 stripped
@@ -8408,9 +8568,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2960306602190118112, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
       propertyPath: m_Name
       value: TEMP Broken Arcade machine
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de02496bcb2922341b812118d6550c82, type: 3}
@@ -8470,9 +8646,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2960306602190118112, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
       propertyPath: m_Name
       value: Arcade Machine (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de02496bcb2922341b812118d6550c82, type: 3}
@@ -8532,9 +8724,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2960306602190118112, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
       propertyPath: m_Name
       value: Arcade Machine (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de02496bcb2922341b812118d6550c82, type: 3}
@@ -8594,9 +8802,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2960306602190118112, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
       propertyPath: m_Name
       value: Arcade Machine (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de02496bcb2922341b812118d6550c82, type: 3}
@@ -8656,9 +8880,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2960306602190118112, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -894366367179995549, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
       propertyPath: m_Name
       value: Arcade Machine (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de02496bcb2922341b812118d6550c82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de02496bcb2922341b812118d6550c82, type: 3}
@@ -8734,6 +8974,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhackaMole (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9b05780a60df36449f9a7313472d157, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9b05780a60df36449f9a7313472d157, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9b05780a60df36449f9a7313472d157, type: 3}
 --- !u!4 &5137058938238488920 stripped
@@ -8808,6 +9056,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoopsArcade
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f2bc7dc646097f4478f7da17e6595118, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f2bc7dc646097f4478f7da17e6595118, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2bc7dc646097f4478f7da17e6595118, type: 3}
 --- !u!4 &5542455295765409018 stripped
@@ -8881,6 +9137,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f2bc7dc646097f4478f7da17e6595118, type: 3}
       propertyPath: m_Name
       value: HoopsArcade (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f2bc7dc646097f4478f7da17e6595118, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f2bc7dc646097f4478f7da17e6595118, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2bc7dc646097f4478f7da17e6595118, type: 3}
