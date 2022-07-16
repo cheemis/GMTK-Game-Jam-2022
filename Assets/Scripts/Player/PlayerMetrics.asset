@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8810bb0ea5e05041b6e4f54c524e67c, type: 3}
+  m_Name: PlayerMetrics
+  m_EditorClassIdentifier: 
+  MaxRunningSpeed: 20
+  GroundAcceleration: 40
+  JumpHeight: 4
+  AirAcceleration: 2
+  Gravity: 10
+  AirHoldTime: 1
+  ArmPullForce: 20
+  ArmPushForce: 10
+  ArmStretchDistance: 2
+  MinArmDistance: 1
+  RotateAroundCenterForce: 15
+  RotateAroundCenterDegreesPerSecond: 360
+  rotationSpeed: 5
