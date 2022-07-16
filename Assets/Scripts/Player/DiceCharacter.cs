@@ -48,7 +48,7 @@ public class DiceCharacter : MonoBehaviour
         rb.AddForce(new Vector3(0f, metrics.JumpForce * 60f, 0f));
     }
 
-    public void Movement(Vector2 inputDir) 
+    public void Movement(Vector3 inputDir) 
     {
         if (groundCheck() && !sustainedJumping)
         {
@@ -63,6 +63,9 @@ public class DiceCharacter : MonoBehaviour
             {
                 Running(inputDir);
             }
+
+            Vector3 vel = new Vector3(rb.velocity.x, (rb.velocity.y - metrics.Gravity * Time.fixedDeltaTime * 0.1f), rb.velocity.z);
+            rb.velocity = vel;
         }
         else if(sustainedJumping && Input.GetKey(KeyCode.Space)) 
         {
@@ -88,10 +91,10 @@ public class DiceCharacter : MonoBehaviour
         }
     }
 
-    public bool groundCheck() 
+    public bool groundCheck(float margin = 0f) 
     {
         RaycastHit info;
-        if(Physics.SphereCast(transform.position, 0.55f, Vector3.down, out info, groundOffset - 0.4f, metrics.groundMask)) 
+        if(Physics.SphereCast(transform.position, 0.55f, Vector3.down, out info, groundOffset - 0.45f + margin, metrics.groundMask)) 
         {
             groundNormal = info.normal;
             groundPoint = info.point;
@@ -108,9 +111,9 @@ public class DiceCharacter : MonoBehaviour
         return false;
     }
 
-    public void Running(Vector2 dir)
+    public void Running(Vector3 dir)
     {
-        Vector3 targetHorizontalVelocity = new Vector3(dir.x * metrics.MaxRunningSpeed, 0f, dir.y * metrics.MaxRunningSpeed);
+        Vector3 targetHorizontalVelocity = new Vector3(dir.x * metrics.MaxRunningSpeed, 0f, dir.z * metrics.MaxRunningSpeed);
 
         Vector3 currentHorizontalVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
@@ -140,9 +143,9 @@ public class DiceCharacter : MonoBehaviour
         //rb.velocity = clampedVelocity;
     }
 
-    private void AirMovement(Vector2 dir) 
+    private void AirMovement(Vector3 dir) 
     {
-        Vector3 targetHorizontalVelocity = new Vector3(dir.x * metrics.MaxRunningSpeed, 0f, dir.y * metrics.MaxRunningSpeed);
+        Vector3 targetHorizontalVelocity = new Vector3(dir.x * metrics.MaxRunningSpeed, 0f, dir.z * metrics.MaxRunningSpeed);
         Vector3 currentHorizontalVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         Vector3 velocityDelta = targetHorizontalVelocity - currentHorizontalVelocity;

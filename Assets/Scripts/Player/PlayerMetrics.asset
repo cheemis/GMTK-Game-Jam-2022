@@ -16,11 +16,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2147483647
   MaxRunningSpeed: 20
-  GroundAcceleration: 40
+  GroundAcceleration: 60
   MaxSlopeAngle: 45
-  StoppingForce: 5
+  StoppingForce: 10
   JumpForce: 20
-  AirAcceleration: 2
+  AirAcceleration: 20
   Gravity: 60
   SustainedJumpGravity: 30
   ArmPullForce: 15
@@ -29,5 +29,5 @@ MonoBehaviour:
   MinArmDistance: 1
   ArmPushPullDrag: 3
   RotateAroundCenterForce: 15
-  RotateAroundCenterDegreesPerSecond: 360
+  RotateAroundCenterDegreesPerSecond: 100000
   rotationSpeed: 3

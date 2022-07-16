@@ -17,20 +17,24 @@ public class Player : MonoBehaviour
 
     private DiceCharacter diceLeft;
     private DiceCharacter diceRight;
+
+    Quaternion forwardDir;
     
 
-    private Vector2 lastInputDir = new Vector2(0f, 1f);
+    private Vector3 lastInputDir = new Vector3(0f, 0f, 1f);
 
     // Start is called before the first frame update
     void Start()
     {
         diceLeft = diceObjectLeft.GetComponent<DiceCharacter>();
         diceRight = diceObjectRight.GetComponent<DiceCharacter>();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void FixedUpdate()
     {
-        Vector2 dir = InputDir();
+        Vector3 dir = InputDir();
 
 
         diceLeft.Movement(dir);
@@ -38,13 +42,13 @@ public class Player : MonoBehaviour
 
         ArmPull();
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(lastInputDir.x, 0f, lastInputDir.y), Vector3.up), metrics.RotateAroundCenterDegreesPerSecond * Time.fixedDeltaTime);
-        MoveToPositionAroundCenter(transform.rotation);
+        forwardDir = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(lastInputDir.x, 0f, lastInputDir.z), Vector3.up), metrics.RotateAroundCenterDegreesPerSecond * Time.fixedDeltaTime);
+        MoveToPositionAroundCenter(forwardDir);
     }
 
     private void Update()
     {
-        transform.position = (diceLeft.rb.position + diceRight.rb.position) * 0.5f;
+        //transform.position = (diceLeft.rb.position + diceRight.rb.position) * 0.5f;
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
@@ -61,18 +65,17 @@ public class Player : MonoBehaviour
         DiceCharacter infront = diceLeft;
         DiceCharacter behind = diceRight;
 
-        Vector2 input = InputDir();
-        Vector3 inputForward = new Vector3(input.x, 0f, input.y);
+        Vector3 input = InputDir();
 
-        if(Vector3.Dot((diceLeft.rb.position - transform.position).normalized, inputForward) < 0f) 
+        if(Vector3.Dot((diceLeft.rb.position - transform.position).normalized, input) < 0f) 
         {
             infront = diceRight;
             behind = diceLeft;
         }
 
-        float infrontDist = Vector3.Project((infront.rb.position - transform.position), inputForward).magnitude;
+        float infrontDist = Vector3.Project((infront.rb.position - transform.position), input).magnitude;
 
-        if (infront.grounded) 
+        if (infront.groundCheck(0.1f)) 
         {
             infrontJumped = true;
             infront.Jump();
@@ -85,7 +88,7 @@ public class Player : MonoBehaviour
         {
             RemainingSecondJumpDelay -= Time.deltaTime;
 
-            if (!infrontJumped && infront.grounded)
+            if (!infrontJumped && infront.groundCheck(0.1f))
             {
                 infrontJumped = true;
                 infront.Jump();
@@ -94,7 +97,7 @@ public class Player : MonoBehaviour
             yield return null;
         }
 
-        if (behind.grounded) 
+        if (behind.groundCheck(0.1f)) 
         {
             behindJumped = true;
             behind.Jump();
@@ -102,11 +105,9 @@ public class Player : MonoBehaviour
         
     }
 
-    private Vector2 InputDir()
+    private Vector3 InputDir()
     {
-        //TODO: take into account camera dir
-
-        Vector2 dir = Vector2.zero;
+        Vector3 dir = Vector3.zero;
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -118,15 +119,23 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W)) 
         {
-            dir.y += 1f;
+            dir.z += 1f;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            dir.y -= 1f;
+            dir.z -= 1f;
         }
 
         if(dir.magnitude > 0.1f) 
         {
+            Vector3 camForward = Vector3.ProjectOnPlane(cam.forward, Vector3.up);
+
+            Debug.DrawLine(transform.position, transform.position + cam.forward, Color.yellow);
+
+            dir = Quaternion.FromToRotation(Vector3.forward, camForward) * dir;
+
+            Debug.DrawLine(transform.position, transform.position + dir * 1.5f, Color.blue);
+
             lastInputDir = dir.normalized;
             return lastInputDir;
         }
