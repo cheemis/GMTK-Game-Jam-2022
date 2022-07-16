@@ -161,13 +161,13 @@ public class Player : MonoBehaviour
 
     private void MoveToPositionAroundCenter(Quaternion rotation) 
     {
-        Debug.DrawLine(transform.position, transform.position + rotation * Vector3.forward, Color.yellow);
+        //Debug.DrawLine(transform.position, transform.position + rotation * Vector3.forward, Color.yellow);
 
         Quaternion currentPlayerRotation = Quaternion.LookRotation(Vector3.Cross((diceRight.rb.position - diceLeft.rb.position).normalized, Vector3.up));
-        Debug.DrawLine(transform.position, transform.position + currentPlayerRotation * Vector3.forward, Color.blue);
+        //Debug.DrawLine(transform.position, transform.position + currentPlayerRotation * Vector3.forward, Color.blue);
 
         Quaternion halfwayRot = Quaternion.Slerp(currentPlayerRotation, rotation, 0.6f);
-        Debug.DrawLine(transform.position, transform.position + halfwayRot * Vector3.forward, Color.cyan);
+        //Debug.DrawLine(transform.position, transform.position + halfwayRot * Vector3.forward, Color.cyan);
 
         transform.position = (diceLeft.rb.position + diceRight.rb.position) * 0.5f;
         float distance = (diceLeft.rb.position - diceRight.rb.position).magnitude;
@@ -182,8 +182,8 @@ public class Player : MonoBehaviour
         rightDelta.y = 0;
         diceRight.rb.AddForce(rightDelta * metrics.RotateAroundCenterForce);
 
-        Debug.DrawLine(leftPos, leftPos + Vector3.up, Color.black);
-        Debug.DrawLine(rightPos, rightPos + Vector3.up, Color.black);
+        //Debug.DrawLine(leftPos, leftPos + Vector3.up, Color.black);
+        //Debug.DrawLine(rightPos, rightPos + Vector3.up, Color.black);
 
         //SetForward directions
         Quaternion leftTargteRotation = Quaternion.LookRotation((new Vector3(diceLeft.rb.velocity.x, 0f, diceLeft.rb.velocity.y) / metrics.MaxRunningSpeed + (rotation * Vector3.forward) * 0.2f).normalized, Vector3.up);

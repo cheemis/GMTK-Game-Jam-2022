@@ -91,7 +91,7 @@ public class DiceCharacter : MonoBehaviour
     public bool groundCheck() 
     {
         RaycastHit info;
-        if(Physics.SphereCast(transform.position, 0.55f, Vector3.down, out info, groundOffset - 0.45f, metrics.groundMask)) 
+        if(Physics.SphereCast(transform.position, 0.55f, Vector3.down, out info, groundOffset - 0.4f, metrics.groundMask)) 
         {
             groundNormal = info.normal;
             groundPoint = info.point;
@@ -102,7 +102,7 @@ public class DiceCharacter : MonoBehaviour
             return true;
         }
 
-        Debug.DrawLine(transform.position, transform.position + Vector3.down * (groundOffset - 0.45f + 0.55f), Color.magenta);
+        //Debug.DrawLine(transform.position, transform.position + Vector3.down * (groundOffset - 0.45f + 0.55f), Color.magenta);
 
         grounded = false;
         return false;
@@ -124,9 +124,9 @@ public class DiceCharacter : MonoBehaviour
             rb.AddForce(force);
         }
 
-        Debug.Log("currentHorizontalVelocity: " + currentHorizontalVelocity);
-        Debug.Log("targetHorizontalVelocity: " + targetHorizontalVelocity);
-        Debug.Log("velocityDelta: " + velocityDelta);
+        //Debug.Log("currentHorizontalVelocity: " + currentHorizontalVelocity);
+        //Debug.Log("targetHorizontalVelocity: " + targetHorizontalVelocity);
+        //Debug.Log("velocityDelta: " + velocityDelta);
 
         Vector3 slopeVel = GetRunDirection(new Vector3(rb.velocity.x, 0f, rb.velocity.z), slopeAngle, groundPoint, groundNormal);
         rb.velocity = new Vector3(rb.velocity.x, slopeVel.y, rb.velocity.z);
@@ -170,7 +170,7 @@ public class DiceCharacter : MonoBehaviour
         {
             if (Physics.Raycast(new Ray(checkPos, Vector3.down), out RaycastHit hitInfo, GetMaxGroundHeight(slopeAngle), metrics.groundMask))
             {
-                Debug.DrawLine(rootContactPoint, rootContactPoint + hitInfo.normal, Color.red);
+                //Debug.DrawLine(rootContactPoint, rootContactPoint + hitInfo.normal, Color.red);
                 rootContactNormal = Vector3.Slerp(rootContactNormal, hitInfo.normal, 0.5f);
             }
         }
