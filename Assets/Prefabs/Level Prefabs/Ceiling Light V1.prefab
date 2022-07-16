@@ -51,7 +51,7 @@ MeshRenderer:
   m_GameObject: {fileID: 5277041004522183483}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7717881523346461891}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -0, z: 2.57}
+  m_LocalPosition: {x: 0, y: 0, z: -0.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -127,10 +127,10 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7607843, g: 1, b: 1, a: 1}
   m_Intensity: 10
-  m_Range: 42.70305
-  m_SpotAngle: 69.73074
+  m_Range: 41
+  m_SpotAngle: 87.5015
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
