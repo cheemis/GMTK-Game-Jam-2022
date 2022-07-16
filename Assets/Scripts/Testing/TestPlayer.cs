@@ -5,12 +5,13 @@ using UnityEngine;
 public class TestPlayer : MonoBehaviour
 {
     [SerializeField] private float forceForce = default;
-    [SerializeField] private Material baseMaterial = default;
-    [SerializeField] private Vector3 startPosition = default;
+    private Material baseMaterial = default;
+    private Vector3 startPosition = default;
+    [SerializeField] private float points = 0.0f;
 
     private void Start() 
     {
-        baseMaterial = GetComponent<MeshRenderer>().material;
+        //baseMaterial = GetComponent<MeshRenderer>().material;
         startPosition =  transform.position;
     }
     private void Update() 
@@ -21,7 +22,7 @@ public class TestPlayer : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            GetComponent<MeshRenderer>().material = baseMaterial;
+            //GetComponent<MeshRenderer>().material = baseMaterial;
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -32,5 +33,13 @@ public class TestPlayer : MonoBehaviour
     public void Print(string s)
     {
         Debug.Log(s);
+    }
+
+    public void AddScore(float modifier)
+    {
+        if (modifier > 0.0f)
+        {
+            points += modifier;
+        }
     }
 }
