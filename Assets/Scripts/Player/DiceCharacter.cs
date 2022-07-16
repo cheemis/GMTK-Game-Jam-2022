@@ -13,6 +13,8 @@ public class DiceCharacter : MonoBehaviour
 
     [HideInInspector]
     public bool grounded = false;
+    [HideInInspector]
+    public bool ragdolling = false;
     private Vector3 groundNormal;
     private Vector3 groundPoint;
     private float slopeAngle;
@@ -24,11 +26,14 @@ public class DiceCharacter : MonoBehaviour
     private const float minJumpSustain = 0.1f;
     private float minJumpSutainTimer;
 
+
     // Start is called before the first frame update
     void Start()
     {
         groundOffset = (transform.position - transform.GetChild(0).position).y;
         rb = GetComponent<Rigidbody>();
+
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
     }
 
     // Update is called once per frame
@@ -38,6 +43,70 @@ public class DiceCharacter : MonoBehaviour
         //{
         //    Vector3 runDirection = GetRunDirection(physCache.ForwardXZ, slopeAngle, groundPoint, groundNormal);
         //}
+
+        if(transform.position.y < 0f) 
+        {
+            transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
+        }
+    }
+
+    public void RagdollDash(Vector3 inputDir) 
+    {
+        ragdolling = true;
+        rb.constraints = 0;
+        rb.angularDrag = 0.05f;
+        rb.drag = 0.05f;
+
+        CapsuleCollider capsule = GetComponent<CapsuleCollider>();
+        capsule.enabled = false;
+        GetComponent<BoxCollider>().enabled = true;
+
+        Vector3 force = (inputDir + Vector3.up * 0.5f).normalized  * metrics.flingForce;
+        Vector3 angular = inputDir * Random.Range(12f, 25f) * (Random.Range(0f, 1f) > 0.5f ? -1f : 1f);
+        angular += Vector3.Cross(inputDir, Vector3.up) * (Random.Range(90f, 200f) * -1f);
+
+        rb.AddForce(force);
+        //rb.AddTorque(angular);
+        rb.angularVelocity = angular * 10f;
+
+        StartCoroutine(RagdollRoutine());
+    }
+
+    private IEnumerator RagdollRoutine() 
+    {
+        float timer = metrics.maxRagdollTime;
+        float velocityZeroTimer = metrics.autoStandUpDelayAfterRest;
+
+        while(timer > 0f && velocityZeroTimer > 0f) 
+        {
+            timer -= Time.deltaTime;
+            if(rb.angularVelocity.magnitude < 0.1f) 
+            {
+                velocityZeroTimer -= Time.deltaTime;
+            }
+            yield return null;
+        }
+
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+        rb.angularVelocity = Vector3.zero;
+        rb.angularDrag = 0f;
+        rb.drag = 0f;
+        GetComponent<CapsuleCollider>().enabled = true;
+        GetComponent<BoxCollider>().enabled = false;
+
+        StartCoroutine(StandUpRoutine());
+    }
+
+    private IEnumerator StandUpRoutine() 
+    {
+        float standUpProgress = 0f;
+        while (standUpProgress > metrics.standUpDuration) 
+        {
+            standUpProgress += Time.deltaTime;
+            yield return null;
+        }
+
+        ragdolling = false;
     }
 
     public void Jump() 
@@ -50,6 +119,14 @@ public class DiceCharacter : MonoBehaviour
 
     public void Movement(Vector3 inputDir) 
     {
+        if (ragdolling) 
+        {
+            sustainedJumping = false;
+            Vector3 vel = new Vector3(rb.velocity.x, (rb.velocity.y - metrics.Gravity * Time.fixedDeltaTime), rb.velocity.z);
+            rb.velocity = vel;
+            return;
+        }
+
         if (groundCheck() && !sustainedJumping)
         {
             sustainedJumping = false;

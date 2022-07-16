@@ -31,4 +31,15 @@ public class PlayerMetrics : ScriptableObject
 
     [Header("Animation")]
     public float rotationSpeed;
+
+    [Header("Ragdoll")]
+    public float flingForce;
+    public float flingAngulairForce;
+    public float maxRagdollTime;
+    public float autoStandUpDelayAfterRest;
+    public float standUpDuration;
+
+    [Header("Physics materials")]
+    public PhysicMaterial platforming;
+    public PhysicMaterial ragdolling;
 }
