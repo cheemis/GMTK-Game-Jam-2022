@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Arcade Stick
+    second: {fileID: 2100000, guid: d5bc7776aefd25342a0b96af9cb54533, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Material.003
     second: {fileID: 2100000, guid: dd650135dca70f2479aa3ad1ccc548df, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Screen
-    second: {fileID: 2100000, guid: dd650135dca70f2479aa3ad1ccc548df, type: 2}
+    second: {fileID: 2100000, guid: 2d8e1a8eee5eefe418bed7e99303e4c2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
