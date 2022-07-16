@@ -23,6 +23,8 @@ public class NPCPatrol : MonoBehaviour
         anim = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
 
+        nav.avoidancePriority = Random.Range(0, 50);
+
         NavMeshHit hit;
         NavMesh.SamplePosition(transform.position, out hit, 50, NavMesh.AllAreas);
         nav.Warp(hit.position);
@@ -71,7 +73,7 @@ public class NPCPatrol : MonoBehaviour
     //this coroutine checks if the NPC has reached it's destination
     IEnumerator Travelling()
     {
-        while(Vector3.Distance(transform.position, dest) > 1)
+        while (Vector3.Distance(transform.position, dest) > 1 || nav.velocity.magnitude > .01f)
         {
             yield return 0;
         }
