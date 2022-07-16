@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
-public class WhackAMoleMole : MonoBehaviour
+public class Arcade : MonoBehaviour
 {
     [SerializeField] private LayerMask AllowedLayers = ~0;
     public UnityEvent GoalReachedEvent = default;
+
     private Collider _thisCollider = default;
 
     private void Start() 

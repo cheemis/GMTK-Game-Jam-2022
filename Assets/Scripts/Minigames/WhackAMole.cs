@@ -33,7 +33,7 @@ public class WhackAMole : MonoBehaviour
     {
         foreach (GameObject mole in Whackamoles)
         {
-            GetComponent<WhackAMoleMole>().GoalReachedEvent.AddListener(AnyGoalReachedEvent.Invoke);
+            mole.GetComponent<WhackAMoleMole>().GoalReachedEvent.AddListener(AnyGoalReachedEvent.Invoke);
         }
 
         AnyGoalReachedEvent.AddListener(UpdateMoleCount);
