@@ -54,6 +54,13 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(JumpRoutine());
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift)) 
+        {
+            InputDir();
+            diceLeft.RagdollDash(lastInputDir);
+            diceRight.RagdollDash(lastInputDir);
+        }
     }
 
     private IEnumerator JumpRoutine()
@@ -75,7 +82,7 @@ public class Player : MonoBehaviour
 
         float infrontDist = Vector3.Project((infront.rb.position - transform.position), input).magnitude;
 
-        if (infront.groundCheck(0.1f)) 
+        if (infront.groundCheck(0.1f) && !infront.ragdolling) 
         {
             infrontJumped = true;
             infront.Jump();
@@ -88,7 +95,7 @@ public class Player : MonoBehaviour
         {
             RemainingSecondJumpDelay -= Time.deltaTime;
 
-            if (!infrontJumped && infront.groundCheck(0.1f))
+            if (!infrontJumped && infront.groundCheck(0.1f) && !infront.ragdolling)
             {
                 infrontJumped = true;
                 infront.Jump();
@@ -97,7 +104,7 @@ public class Player : MonoBehaviour
             yield return null;
         }
 
-        if (behind.groundCheck(0.1f)) 
+        if (behind.groundCheck(0.1f) && !behind.ragdolling) 
         {
             behindJumped = true;
             behind.Jump();
@@ -170,6 +177,7 @@ public class Player : MonoBehaviour
 
     private void MoveToPositionAroundCenter(Quaternion rotation) 
     {
+
         //Debug.DrawLine(transform.position, transform.position + rotation * Vector3.forward, Color.yellow);
 
         Quaternion currentPlayerRotation = Quaternion.LookRotation(Vector3.Cross((diceRight.rb.position - diceLeft.rb.position).normalized, Vector3.up));
@@ -181,25 +189,30 @@ public class Player : MonoBehaviour
         transform.position = (diceLeft.rb.position + diceRight.rb.position) * 0.5f;
         float distance = (diceLeft.rb.position - diceRight.rb.position).magnitude;
 
-        Vector3 leftPos = transform.position + Vector3.ClampMagnitude((halfwayRot * Vector3.left) * distance, metrics.ArmStretchDistance);
-        Vector3 leftDelta =  (leftPos - diceLeft.rb.position);
-        leftDelta.y = 0;
-        diceLeft.rb.AddForce(leftDelta * metrics.RotateAroundCenterForce);
+        if (!diceLeft.ragdolling)
+        {
+            Vector3 leftPos = transform.position + Vector3.ClampMagnitude((halfwayRot * Vector3.left) * distance, metrics.ArmStretchDistance);
+            Vector3 leftDelta = (leftPos - diceLeft.rb.position);
+            leftDelta.y = 0;
+            diceLeft.rb.AddForce(leftDelta * metrics.RotateAroundCenterForce);
 
-        Vector3 rightPos = transform.position + Vector3.ClampMagnitude((halfwayRot * Vector3.right) * distance, metrics.ArmStretchDistance);
-        Vector3 rightDelta = rightPos - diceRight.rb.position;
-        rightDelta.y = 0;
-        diceRight.rb.AddForce(rightDelta * metrics.RotateAroundCenterForce);
+            Quaternion leftTargteRotation = Quaternion.LookRotation((new Vector3(diceLeft.rb.velocity.x, 0f, diceLeft.rb.velocity.y) / metrics.MaxRunningSpeed + (rotation * Vector3.forward) * 0.2f).normalized, Vector3.up);
+            diceLeft.rb.rotation = Quaternion.Slerp(diceLeft.rb.rotation, leftTargteRotation, metrics.rotationSpeed * Time.fixedDeltaTime);
+        }
+
+        if (!diceRight.ragdolling)
+        {
+            Vector3 rightPos = transform.position + Vector3.ClampMagnitude((halfwayRot * Vector3.right) * distance, metrics.ArmStretchDistance);
+            Vector3 rightDelta = rightPos - diceRight.rb.position;
+            rightDelta.y = 0;
+            diceRight.rb.AddForce(rightDelta * metrics.RotateAroundCenterForce);
+
+            Quaternion rightTargetRotation = Quaternion.LookRotation((new Vector3(diceRight.rb.velocity.x, 0f, diceRight.rb.velocity.y) / metrics.MaxRunningSpeed + (rotation * Vector3.forward) * 0.2f).normalized, Vector3.up);
+            diceRight.rb.rotation = Quaternion.Slerp(diceRight.rb.rotation, rightTargetRotation, metrics.rotationSpeed * Time.fixedDeltaTime);
+        }
 
         //Debug.DrawLine(leftPos, leftPos + Vector3.up, Color.black);
         //Debug.DrawLine(rightPos, rightPos + Vector3.up, Color.black);
-
-        //SetForward directions
-        Quaternion leftTargteRotation = Quaternion.LookRotation((new Vector3(diceLeft.rb.velocity.x, 0f, diceLeft.rb.velocity.y) / metrics.MaxRunningSpeed + (rotation * Vector3.forward) * 0.2f).normalized, Vector3.up);
-        diceLeft.rb.rotation = Quaternion.Slerp(diceLeft.rb.rotation, leftTargteRotation, metrics.rotationSpeed * Time.fixedDeltaTime);
-
-        Quaternion rightTargetRotation = Quaternion.LookRotation((new Vector3(diceRight.rb.velocity.x, 0f, diceRight.rb.velocity.y) / metrics.MaxRunningSpeed + (rotation * Vector3.forward) * 0.2f).normalized, Vector3.up);
-        diceRight.rb.rotation = Quaternion.Slerp(diceRight.rb.rotation, rightTargetRotation, metrics.rotationSpeed * Time.fixedDeltaTime);
     }
 
 }   

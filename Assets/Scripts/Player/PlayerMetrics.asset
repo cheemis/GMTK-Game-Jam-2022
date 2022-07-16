@@ -31,3 +31,10 @@ MonoBehaviour:
   RotateAroundCenterForce: 15
   RotateAroundCenterDegreesPerSecond: 100000
   rotationSpeed: 3
+  flingForce: 1000
+  flingAngulairForce: 20
+  maxRagdollTime: 5
+  autoStandUpDelayAfterRest: 0.5
+  standUpDuration: 0.5
+  platforming: {fileID: 0}
+  ragdolling: {fileID: 0}
