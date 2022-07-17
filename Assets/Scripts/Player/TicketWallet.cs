@@ -25,6 +25,8 @@ public class TicketWallet : MonoBehaviour
             }
             return;
         }
+        
+        if (TicketUIText) TicketUIText.text = ticketCount.ToString() + "/" + ticketGoal;
         Destroy(this);
     }
 
@@ -40,7 +42,7 @@ public class TicketWallet : MonoBehaviour
         {
             GoalReachedEvent.Invoke();
         }
-        if (TicketUIText) TicketUIText.text = ticketCount.ToString();
+        if (TicketUIText) TicketUIText.text = ticketCount.ToString() + "/" + ticketGoal;
     }
 
     private void OnTriggerEnter(Collider other)
