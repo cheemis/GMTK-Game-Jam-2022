@@ -24,11 +24,15 @@ public class NPC_Kick : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag != "Player") { return; }
+        DiceCharacter character = other.gameObject.GetComponent<DiceCharacter>();
+
+        if(!character.player.controllable) { return; }
 
         Vector3 velocity = (lastFramePos - prevLastFramePos) / Time.deltaTime;
 
         Vector3 force = Vector3.ClampMagnitude((velocity + Vector3.up * 5f) * 100f, 10000f);
-        other.gameObject.GetComponent<DiceCharacter>().RagdollHit(force);
+
+        character.RagdollHit(force);
     }
 
 
