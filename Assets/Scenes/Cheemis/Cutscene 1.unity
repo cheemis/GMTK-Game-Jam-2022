@@ -8183,7 +8183,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.165725, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -15990,6 +15990,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f2bc7dc646097f4478f7da17e6595118, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e20461f6d65136b449daa38f04f9419d, type: 2}
     - target: {fileID: 919132149155446097, guid: f2bc7dc646097f4478f7da17e6595118, type: 3}
       propertyPath: m_Name
       value: HoopsArcade (1)
@@ -16406,6 +16410,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f2bc7dc646097f4478f7da17e6595118, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e20461f6d65136b449daa38f04f9419d, type: 2}
     - target: {fileID: 919132149155446097, guid: f2bc7dc646097f4478f7da17e6595118, type: 3}
       propertyPath: m_Name
       value: HoopsArcade
