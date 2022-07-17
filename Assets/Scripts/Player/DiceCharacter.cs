@@ -77,6 +77,8 @@ public class DiceCharacter : MonoBehaviour
         //rb.AddTorque(angular);
         rb.angularVelocity = angular * 10f;
 
+        audio.PlayLaunchSound();
+
         StopAllCoroutines();
         StartCoroutine(RagdollRoutine());
     }
@@ -99,6 +101,8 @@ public class DiceCharacter : MonoBehaviour
 
         rb.AddForce(force);
         rb.angularVelocity = angular * 10f;
+
+        audio.PlayJumpSound();
 
         StopAllCoroutines();
         StartCoroutine(RagdollRoutine());

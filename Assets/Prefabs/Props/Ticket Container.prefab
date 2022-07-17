@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1853169303357267741}
   - component: {fileID: 8977466679871908186}
   - component: {fileID: 4579805744780086549}
+  - component: {fileID: 4790766063367512941}
   m_Layer: 0
   m_Name: Ticket Container
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642471218548239716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.47, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -72,6 +73,19 @@ MonoBehaviour:
   CollectEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &4790766063367512941
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642471218548239716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &4042636468975506320
 GameObject:
   m_ObjectHideFlags: 0

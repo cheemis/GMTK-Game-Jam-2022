@@ -54,4 +54,15 @@ public class DiceSounds : MonoBehaviour
         
         //AudioSource.PlayClipAtPoint(jump, transform.position, 20f);
     }
+
+    public void PlayLaunchSound()
+    {
+        soundPlayer.clip = jump;
+        soundPlayer.pitch = Random.Range(0.6f, 1.1f);
+        soundPlayer.volume = Random.Range(0.3f, 0.5f);
+        soundPlayer.Play();
+
+
+        //AudioSource.PlayClipAtPoint(jump, transform.position, 20f);
+    }
 }
