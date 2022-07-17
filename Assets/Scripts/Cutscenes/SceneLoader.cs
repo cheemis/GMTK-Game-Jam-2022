@@ -10,6 +10,7 @@ public class SceneLoader : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            AudioManager.Instance.PlayCutsceneMusic();
             SceneManager.LoadSceneAsync(NextScene);
         }
     }
