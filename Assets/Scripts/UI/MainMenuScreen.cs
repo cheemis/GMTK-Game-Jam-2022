@@ -10,12 +10,18 @@ public class MainMenuScreen : MonoBehaviour
     public GameObject Settings;
     public GameObject Credits;
 
+    private bool startedGame = false;
     public GameObject blackFade;
 
     public void StartGame()
     {
-        blackFade.SetActive(true);
-        StartCoroutine(LoadGame());
+        if(!startedGame)
+        {
+            blackFade.GetComponent<Animator>().SetTrigger("loadLevel");
+            startedGame = true;
+            blackFade.SetActive(true);
+            StartCoroutine(LoadGame());
+        }
     }
 
     public void OpenSettings()
@@ -39,7 +45,7 @@ public class MainMenuScreen : MonoBehaviour
 
     IEnumerator LoadGame()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.1f);
         SceneManager.LoadSceneAsync(1);
     }
 
