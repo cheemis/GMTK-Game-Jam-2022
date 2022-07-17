@@ -13,6 +13,8 @@ public class MainMenuScreen : MonoBehaviour
     private bool startedGame = false;
     public GameObject blackFade;
 
+    public AudioManager audioManager;
+
     public void StartGame()
     {
         if(!startedGame)
@@ -20,6 +22,7 @@ public class MainMenuScreen : MonoBehaviour
             blackFade.GetComponent<Animator>().SetTrigger("loadLevel");
             startedGame = true;
             blackFade.SetActive(true);
+            AudioManager.Instance.PlayCutsceneMusic();
             StartCoroutine(LoadGame());
         }
     }

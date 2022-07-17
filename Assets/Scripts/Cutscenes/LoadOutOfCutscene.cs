@@ -15,6 +15,10 @@ public class LoadOutOfCutscene : MonoBehaviour
 
     private void LoadNextScene()
     {
+        if (SceneManager.GetActiveScene().name == "Cutscene 1") 
+        {
+            AudioManager.Instance.PlayArcadeAmbience();
+          }
         SceneManager.LoadSceneAsync(nextScene);
     }
 }
