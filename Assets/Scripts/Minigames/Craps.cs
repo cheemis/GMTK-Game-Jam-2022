@@ -17,7 +17,7 @@ public class Craps : MonoBehaviour
     [SerializeField] private TMP_Text UIDiceTotalText = default;
     [SerializeField] private TMP_Text UICrapSetText = default;
     [SerializeField] private LayerMask AllowedLayers = ~0;
-    [SerializeField] private List<Rigidbody> containedBodies = default;
+    [SerializeField] private List<Rigidbody> containedBodies = new List<Rigidbody>();
     private int[] _mySet = default;
     private bool _diceCounted = false;
 
@@ -29,7 +29,7 @@ public class Craps : MonoBehaviour
         }
 
         _mySet = CrapSet[Random.Range(0, CrapSet.Length)];
-        UICrapSetText.text = string.Join(", ", _mySet);
+        if (UICrapSetText) UICrapSetText.text = string.Join(", ", _mySet);
     }
     
     // NOTE: OnTriggerExit does not run when the script is disabled, so the bodies will still have the script attached if the craps table is turned off.
@@ -40,12 +40,13 @@ public class Craps : MonoBehaviour
             containedBodies.Add(other.attachedRigidbody);
             DiceFaceDetection dfd = other.gameObject.AddComponent<DiceFaceDetection>();
             dfd.MyIndex = other.gameObject.name;
-            dfd.UIDiceTotalText = UIDiceTotalText;
+            if (UIDiceTotalText)
+                dfd.UIDiceTotalText = UIDiceTotalText;
             DiceFaceDetection.DiceValues.Add(other.gameObject.name, 0);
             DiceFaceDetection.DiceValuesSet.Add(other.gameObject.name, false);
         }
         
-        UICrapSetText.text = string.Join(", ", _mySet);
+        if (UICrapSetText) UICrapSetText.text = string.Join(", ", _mySet);
     }
 
     private void OnTriggerStay(Collider other) 
@@ -54,7 +55,7 @@ public class Craps : MonoBehaviour
         {
             _diceCounted = true;
             bool b = _mySet.Contains(DiceFaceDetection.DiceValues.Values.Sum());
-            UIDiceTotalText.color = b ? Color.green : Color.red;
+            if (UIDiceTotalText) UIDiceTotalText.color = b ? Color.green : Color.red;
             if (b) GoalReached.Invoke();
         }   
     }
@@ -70,6 +71,6 @@ public class Craps : MonoBehaviour
         }
 
         _diceCounted = false;
-        UIDiceTotalText.color = Color.white;
+        if (UIDiceTotalText) UIDiceTotalText.color = Color.white;
     }
 }
