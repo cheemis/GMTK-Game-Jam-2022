@@ -19,7 +19,7 @@ public class DiceCharacter : MonoBehaviour
     private Vector3 groundPoint;
     private float slopeAngle;
 
-    Vector3 velocityXZ;
+    private Animator animator;
 
     private bool sustainedJumping = false;
 
@@ -32,6 +32,7 @@ public class DiceCharacter : MonoBehaviour
     {
         groundOffset = (transform.position - transform.GetChild(0).position).y;
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
 
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
     }
@@ -53,6 +54,7 @@ public class DiceCharacter : MonoBehaviour
     public void RagdollDash(Vector3 inputDir) 
     {
         ragdolling = true;
+        animator.SetBool("Rolling", true);
         rb.constraints = 0;
         rb.angularDrag = 0.05f;
         rb.drag = 0.05f;
@@ -75,6 +77,7 @@ public class DiceCharacter : MonoBehaviour
     public void RagdollHit(Vector3 force) 
     {
         ragdolling = true;
+        animator.SetBool("Rolling", true);
         rb.constraints = 0;
         rb.angularDrag = 0.05f;
         rb.drag = 0.05f;
@@ -120,6 +123,7 @@ public class DiceCharacter : MonoBehaviour
 
     private IEnumerator StandUpRoutine() 
     {
+        animator.SetBool("Rolling", false);
         float standUpProgress = 0f;
         while (standUpProgress > metrics.standUpDuration) 
         {
@@ -187,6 +191,13 @@ public class DiceCharacter : MonoBehaviour
             Vector3 vel = new Vector3(rb.velocity.x, (rb.velocity.y - metrics.Gravity * Time.fixedDeltaTime), rb.velocity.z);
             rb.velocity = vel;
         }
+
+        float speed = rb.velocity.magnitude / metrics.MaxRunningSpeed;
+        if(speed > 0.05f) 
+        {
+            speed = Mathf.Clamp(speed, 0.5f, 2.0f);
+        }
+        animator.SetFloat("Speed", speed);
     }
 
     public bool groundCheck(float margin = 0f) 
@@ -200,12 +211,14 @@ public class DiceCharacter : MonoBehaviour
             slopeAngle = Vector3.Angle(info.normal, Vector3.up);
 
             grounded = true;
+            animator.SetBool("Grounded", true);
             return true;
         }
 
         //Debug.DrawLine(transform.position, transform.position + Vector3.down * (groundOffset - 0.45f + 0.55f), Color.magenta);
 
         grounded = false;
+        animator.SetBool("Grounded", false);
         return false;
     }
 
@@ -224,6 +237,8 @@ public class DiceCharacter : MonoBehaviour
 
             rb.AddForce(force);
         }
+
+
 
         //Debug.Log("currentHorizontalVelocity: " + currentHorizontalVelocity);
         //Debug.Log("targetHorizontalVelocity: " + targetHorizontalVelocity);
