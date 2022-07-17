@@ -20,6 +20,7 @@ public class DiceCharacter : MonoBehaviour
     private float slopeAngle;
 
     private Animator animator;
+    private DiceSounds audio;
 
     private bool sustainedJumping = false;
 
@@ -33,6 +34,7 @@ public class DiceCharacter : MonoBehaviour
         groundOffset = (transform.position - transform.GetChild(0).position).y;
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        audio = GetComponentInChildren<DiceSounds>();
 
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
     }
@@ -210,6 +212,11 @@ public class DiceCharacter : MonoBehaviour
 
             slopeAngle = Vector3.Angle(info.normal, Vector3.up);
 
+            if(grounded == false && rb.velocity.y < -2f) 
+            {
+                audio.PlayFootstep();
+            }
+
             grounded = true;
             animator.SetBool("Grounded", true);
             return true;
@@ -299,5 +306,13 @@ public class DiceCharacter : MonoBehaviour
         float maxSlopeHeight = groundOffset + 0.15f * Mathf.Tan(metrics.MaxSlopeAngle * Mathf.Deg2Rad) - groundOffset;
         float slopeRatio = Mathf.Clamp01(slopeAngle / metrics.MaxSlopeAngle);
         return groundOffset + (maxSlopeHeight * slopeRatio) - 0.025f;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (ragdolling) 
+        {
+            audio.PlayDiceCollision();
+        }
     }
 }

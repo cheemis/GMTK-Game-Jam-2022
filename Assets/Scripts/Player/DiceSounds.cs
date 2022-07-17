@@ -35,6 +35,11 @@ public class DiceSounds : MonoBehaviour
         AudioSource.PlayClipAtPoint(footstep, transform.position + Vector3.down, 10f);
     }
 
+    public void PlayDiceCollision() 
+    {
+        PlayFootstep();
+    }
+
     public void PlayJumpSound() 
     {
     }
