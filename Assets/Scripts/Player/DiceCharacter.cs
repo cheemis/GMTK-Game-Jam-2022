@@ -63,6 +63,8 @@ public class DiceCharacter : MonoBehaviour
         rb.angularDrag = 0.05f;
         rb.drag = 0.05f;
 
+        ChangeFace(metrics.rollingFaces);
+
         CapsuleCollider capsule = GetComponent<CapsuleCollider>();
         capsule.enabled = false;
         GetComponent<BoxCollider>().enabled = true;
@@ -85,6 +87,8 @@ public class DiceCharacter : MonoBehaviour
         rb.constraints = 0;
         rb.angularDrag = 0.05f;
         rb.drag = 0.05f;
+
+        ChangeFace(metrics.rollingFaces);
 
         CapsuleCollider capsule = GetComponent<CapsuleCollider>();
         capsule.enabled = false;
@@ -136,6 +140,7 @@ public class DiceCharacter : MonoBehaviour
         }
 
         ragdolling = false;
+        ChangeFace(metrics.normalFaces);
     }
 
     public void Jump() 
@@ -316,5 +321,12 @@ public class DiceCharacter : MonoBehaviour
         {
             audio.PlayDiceCollision();
         }
+    }
+
+    private void ChangeFace(Texture2D[] textures) 
+    {
+        int index = Random.Range(0, textures.Length);
+        face.material.SetTexture("_MainTex", textures[index]);
+        face.material.SetTexture("_EmissionMap", textures[index]);
     }
 }
