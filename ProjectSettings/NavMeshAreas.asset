@@ -11,11 +11,11 @@ NavMeshProjectSettings:
     cost: 1
   - name: Jump
     cost: 2
-  - name: Craps Room
+  - name: CrapsRoom
     cost: 1
   - name: Stage
     cost: 1
-  - name: Back Room
+  - name: BackRoom
     cost: 1
   - name: 
     cost: 1
