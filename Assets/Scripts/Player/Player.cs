@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     public Transform cam;
 
-    public bool controllable = false;
+    public bool controllable = true;
 
     private DiceCharacter diceLeft;
     private DiceCharacter diceRight;
