@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ticketCount: 1
+  collection: {fileID: 8300000, guid: 5bf56dba5cab546439b48263f7bd3082, type: 3}
   CollectEvent:
     m_PersistentCalls:
       m_Calls: []
