@@ -40,7 +40,7 @@ public class TicketWallet : MonoBehaviour
         {
             GoalReachedEvent.Invoke();
         }
-        TicketUIText.text = ticketCount.ToString();
+        if (TicketUIText) TicketUIText.text = ticketCount.ToString();
     }
 
     private void OnTriggerEnter(Collider other)
