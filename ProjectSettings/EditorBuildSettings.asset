@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Cheemis/Main Menu.unity
+    guid: c64820075b44a9648aae2f092a95f5fa
+  - enabled: 1
+    path: Assets/Scenes/Cheemis/Cutscene 1.unity
+    guid: e0f52fa4fbe15674bade0391531bc970
+  - enabled: 1
+    path: Assets/Scenes/Cheemis/Level Test.unity
+    guid: f6f34f471bffd194ea5361585fa879fa
+  - enabled: 1
+    path: Assets/Scenes/Cheemis/Cutscene 2.unity
+    guid: c59eeff4bb69e5341b355258f6f7836c
   m_configObjects: {}
