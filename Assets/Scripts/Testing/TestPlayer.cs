@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestPlayer : MonoBehaviour
 {
     [SerializeField] private float forceForce = default;
-    private Material baseMaterial = default;
+    //private Material baseMaterial = default;
     private Vector3 startPosition = default;
     [SerializeField] private float points = 0.0f;
 
