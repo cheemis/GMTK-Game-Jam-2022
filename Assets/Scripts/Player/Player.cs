@@ -63,8 +63,14 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift)) 
         {
             InputDir();
-            diceLeft.RagdollDash(lastInputDir);
-            diceRight.RagdollDash(lastInputDir);
+            if (!diceLeft.ragdolling) 
+            {
+                diceLeft.RagdollDash(lastInputDir);
+            }
+            if (!diceRight.ragdolling)
+            {
+                diceRight.RagdollDash(lastInputDir);
+            }
         }
     }
 
