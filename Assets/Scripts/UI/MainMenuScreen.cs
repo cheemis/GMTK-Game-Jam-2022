@@ -22,7 +22,10 @@ public class MainMenuScreen : MonoBehaviour
             blackFade.GetComponent<Animator>().SetTrigger("loadLevel");
             startedGame = true;
             blackFade.SetActive(true);
+            if (SceneManager.GetActiveScene().name == "Level Test") 
+        {
             AudioManager.Instance.PlayCutsceneMusic();
+          }
             StartCoroutine(LoadGame());
         }
     }
@@ -46,10 +49,30 @@ public class MainMenuScreen : MonoBehaviour
         Credits.SetActive(false);
     }
 
+    public void LoadFromCharacterCreator()
+    {
+        blackFade.GetComponent<Animator>().SetTrigger("loadLevel");
+      blackFade.SetActive(true);
+    AudioManager.Instance.PlayCutsceneMusic();
+    StartCoroutine(LoadNextSceneAgain());
+    }
+
     IEnumerator LoadGame()
     {
         yield return new WaitForSeconds(2.1f);
         SceneManager.LoadSceneAsync(1);
+    }
+
+     IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSeconds(2.1f);
+        SceneManager.LoadSceneAsync(2);
+    }
+
+     IEnumerator LoadNextSceneAgain()
+    {
+        yield return new WaitForSeconds(2.1f);
+        SceneManager.LoadSceneAsync(3);
     }
 
 }

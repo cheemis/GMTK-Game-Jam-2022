@@ -1672,6 +1672,10 @@ PrefabInstance:
       propertyPath: blackFade
       value: 
       objectReference: {fileID: 1457706194}
+    - target: {fileID: 5619325617308424545, guid: c50446a36a350fd4293f767a2f2f233d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6969197355053619939, guid: c50446a36a350fd4293f767a2f2f233d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1770,7 +1774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7747354317058420681, guid: c50446a36a350fd4293f767a2f2f233d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1182
+      value: -1636
       objectReference: {fileID: 0}
     - target: {fileID: 7747354317058420681, guid: c50446a36a350fd4293f767a2f2f233d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1788,9 +1792,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7747354317365464696, guid: c50446a36a350fd4293f767a2f2f233d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.300001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747354317365464696, guid: c50446a36a350fd4293f767a2f2f233d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747354317365464699, guid: c50446a36a350fd4293f767a2f2f233d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747354318043277988, guid: c50446a36a350fd4293f767a2f2f233d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747354318043277989, guid: c50446a36a350fd4293f767a2f2f233d, type: 3}
+      propertyPath: m_text
+      value: 'Fuzzy Dice
+
+        Simulator'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747354318083608250, guid: c50446a36a350fd4293f767a2f2f233d, type: 3}
+      propertyPath: m_Color.a
+      value: 0.31764707
+      objectReference: {fileID: 0}
     - target: {fileID: 8177098810865801479, guid: c50446a36a350fd4293f767a2f2f233d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 24.70001
+      value: -6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c50446a36a350fd4293f767a2f2f233d, type: 3}
