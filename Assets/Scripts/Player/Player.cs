@@ -42,7 +42,22 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!controllable) { return; }
+        if (!controllable) 
+        {
+            ArmPull();
+            if (!diceLeft.groundCheck()) 
+            {
+                diceLeft.rb.AddForce(Vector3.down * metrics.Gravity);
+                
+            }
+            if (!diceRight.groundCheck())
+            {
+                diceRight.rb.AddForce(Vector3.down * metrics.Gravity);
+            }
+            diceLeft.rb.AddForce(-diceLeft.rb.velocity * metrics.StoppingForce);
+            diceRight.rb.AddForce(-diceRight.rb.velocity * metrics.StoppingForce);
+            return; 
+        }
 
         Vector3 dir = InputDir();
 
