@@ -151,7 +151,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 250372873341788300, guid: dec9f2d48619ba1409fecdeb8e380abe, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.0173676
+      value: 2.0173674
       objectReference: {fileID: 0}
     - target: {fileID: 972340901635240059, guid: dec9f2d48619ba1409fecdeb8e380abe, type: 3}
       propertyPath: m_CastShadows
@@ -255,7 +255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6172867590981889179, guid: dec9f2d48619ba1409fecdeb8e380abe, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.0173676
+      value: 2.0173674
       objectReference: {fileID: 0}
     - target: {fileID: 6189017168248548828, guid: dec9f2d48619ba1409fecdeb8e380abe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -427,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8154692587656104396, guid: dec9f2d48619ba1409fecdeb8e380abe, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.0173676
+      value: 2.0173674
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dec9f2d48619ba1409fecdeb8e380abe, type: 3}
@@ -989,18 +989,10 @@ PrefabInstance:
       propertyPath: GoalReachedEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: TestPlayer, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 1728604758265016182, guid: 7f24a4dc820b67b489cd269745dc881a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728604758265016182, guid: 7f24a4dc820b67b489cd269745dc881a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 15.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728604758265016182, guid: 7f24a4dc820b67b489cd269745dc881a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.65
-      objectReference: {fileID: 0}
+    - target: {fileID: 6309140471961587715, guid: 7f24a4dc820b67b489cd269745dc881a, type: 3}
+      propertyPath: TicketPrefab
+      value: 
+      objectReference: {fileID: 1642471218548239716, guid: 4bc162b234793c2489e149c2e5e3eed4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f24a4dc820b67b489cd269745dc881a, type: 3}
 --- !u!1001 &6813026493817235507
@@ -1146,18 +1138,6 @@ PrefabInstance:
     - target: {fileID: 6964648947191033658, guid: fa955a567c1f53e46906a2be7e558ffc, type: 3}
       propertyPath: GoalReachedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6964648947479355491, guid: fa955a567c1f53e46906a2be7e558ffc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 6964648947479355491, guid: fa955a567c1f53e46906a2be7e558ffc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 6964648947479355491, guid: fa955a567c1f53e46906a2be7e558ffc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -14.72
       objectReference: {fileID: 0}
     - target: {fileID: 6964648948380765067, guid: fa955a567c1f53e46906a2be7e558ffc, type: 3}
       propertyPath: GoalReachedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
