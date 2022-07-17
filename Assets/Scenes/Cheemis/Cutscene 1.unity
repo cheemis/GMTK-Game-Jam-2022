@@ -12883,7 +12883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: 3
-  cutSceneTime: 18
+  cutSceneTime: 20
 --- !u!4 &1834825317
 Transform:
   m_ObjectHideFlags: 0
