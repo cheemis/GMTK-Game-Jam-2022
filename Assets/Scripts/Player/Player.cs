@@ -207,7 +207,7 @@ public class Player : MonoBehaviour
             leftDelta.y = 0;
             diceLeft.rb.AddForce(leftDelta * metrics.RotateAroundCenterForce);
 
-            Quaternion leftTargteRotation = Quaternion.LookRotation((new Vector3(diceLeft.rb.velocity.x, 0f, diceLeft.rb.velocity.y) / metrics.MaxRunningSpeed + (rotation * Vector3.forward) * 0.2f).normalized, Vector3.up);
+            Quaternion leftTargteRotation = Quaternion.LookRotation((new Vector3(diceLeft.rb.velocity.x, 0f, diceLeft.rb.velocity.y) / metrics.MaxRunningSpeed + (rotation * Vector3.forward)).normalized, Vector3.up);
             diceLeft.rb.rotation = Quaternion.Slerp(diceLeft.rb.rotation, leftTargteRotation, metrics.rotationSpeed * Time.fixedDeltaTime);
         }
 
@@ -218,7 +218,7 @@ public class Player : MonoBehaviour
             rightDelta.y = 0;
             diceRight.rb.AddForce(rightDelta * metrics.RotateAroundCenterForce);
 
-            Quaternion rightTargetRotation = Quaternion.LookRotation((new Vector3(diceRight.rb.velocity.x, 0f, diceRight.rb.velocity.y) / metrics.MaxRunningSpeed + (rotation * Vector3.forward) * 0.2f).normalized, Vector3.up);
+            Quaternion rightTargetRotation = Quaternion.LookRotation((new Vector3(diceRight.rb.velocity.x, 0f, diceRight.rb.velocity.y) / metrics.MaxRunningSpeed + (rotation * Vector3.forward)).normalized, Vector3.up);
             diceRight.rb.rotation = Quaternion.Slerp(diceRight.rb.rotation, rightTargetRotation, metrics.rotationSpeed * Time.fixedDeltaTime);
         }
 
