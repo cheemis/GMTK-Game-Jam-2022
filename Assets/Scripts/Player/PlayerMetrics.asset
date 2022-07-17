@@ -36,5 +36,19 @@ MonoBehaviour:
   maxRagdollTime: 5
   autoStandUpDelayAfterRest: 0.5
   standUpDuration: 0.5
-  platforming: {fileID: 0}
-  ragdolling: {fileID: 0}
+  platforming: {fileID: 13400000, guid: 0ce8eea87c87b2848adaa6f88bb69191, type: 2}
+  ragdolling: {fileID: 13400000, guid: aa003565474b69049bb3e31693b3addd, type: 2}
+  rollingFaces:
+  - {fileID: 2800000, guid: 0dcc27523ea8bb54f96ba4fbaeb605f3, type: 3}
+  - {fileID: 2800000, guid: 3a824034cfd679a47a0d48e73ef9addf, type: 3}
+  - {fileID: 2800000, guid: a18d37d5842407d4781ec5db0b13e919, type: 3}
+  - {fileID: 2800000, guid: 91a8b041dfa78a942bad57980abb70d4, type: 3}
+  - {fileID: 2800000, guid: b4c0c00c4cd8fc44686bf31f501c6164, type: 3}
+  - {fileID: 2800000, guid: 6c16d39b2d04b7e4ba9473b9869e4c70, type: 3}
+  normalFaces:
+  - {fileID: 2800000, guid: 691048bb5e510534880b369631668bc6, type: 3}
+  - {fileID: 2800000, guid: 0c1a2ae99e19ab44f82d4ad6eabeec8a, type: 3}
+  - {fileID: 2800000, guid: 9bf81e911cd1f2542ad18d1c03a52f6f, type: 3}
+  - {fileID: 2800000, guid: f6fae180abaca1d499e4b30ff22a7ba1, type: 3}
+  - {fileID: 2800000, guid: ec393fe1f42966f4e920b83f9925baa5, type: 3}
+  happyFaces: []

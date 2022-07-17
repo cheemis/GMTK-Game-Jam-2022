@@ -42,4 +42,9 @@ public class PlayerMetrics : ScriptableObject
     [Header("Physics materials")]
     public PhysicMaterial platforming;
     public PhysicMaterial ragdolling;
+
+    [Header("Faces")]
+    public Texture2D[] rollingFaces;
+    public Texture2D[] normalFaces;
+    public Texture2D[] happyFaces;
 }

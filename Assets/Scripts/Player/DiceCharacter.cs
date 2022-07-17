@@ -6,6 +6,8 @@ public class DiceCharacter : MonoBehaviour
 {
     [SerializeField]
     private PlayerMetrics metrics;
+    [SerializeField]
+    private MeshRenderer face;
 
     [HideInInspector]
     public Rigidbody rb;
