@@ -16,6 +16,8 @@ public class NPCPatrol : MonoBehaviour
     private Vector3 dest;
     public Vector2 range = new Vector2(50, 100);
 
+    private bool isIdle = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,11 +34,12 @@ public class NPCPatrol : MonoBehaviour
         if (Random.Range(0, 100) > 50)
         {
             Debug.Log("idle");
-            StartCoroutine(Idle(Random.Range(idleTimes.x, idleTimes.y)));
+            
         }
         else
         {
             Debug.Log("travel");
+            isIdle = false;
             SetNewDestination();
         }
     }
@@ -44,6 +47,22 @@ public class NPCPatrol : MonoBehaviour
     private void Update()
     {
         anim.SetFloat("speed", nav.velocity.magnitude);
+
+        if(!isIdle)
+        {
+            if(Vector3.Distance(transform.position, dest) > 1 && nav.velocity.magnitude > .1f)
+            {
+                isIdle = true;
+                StartCoroutine(Idle(Random.Range(idleTimes.x, idleTimes.y)));
+            }
+        }
+    }
+
+    //this coroutine waits at a destination before moving to a new position
+    IEnumerator Idle(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        SetNewDestination();
     }
 
     //this method sets a new destination for the NPC to wander to
@@ -54,30 +73,19 @@ public class NPCPatrol : MonoBehaviour
         Vector2 rand = Random.insideUnitCircle * Random.Range(range.x, range.y);
         Vector3 pos = new Vector3(rand.x, 0, rand.y);
 
-        NavMesh.SamplePosition(pos, out hit, 50, nav.areaMask);
+        NavMesh.SamplePosition(pos, out hit, 200, nav.areaMask);
 
         dest = hit.position;
-        Debug.Log(dest);
-        Debug.Log(nav.SetDestination(dest));
 
-        StartCoroutine(Travelling());
-    }
-
-    //this coroutine waits at a destination before moving to a new position
-    IEnumerator Idle(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        SetNewDestination();
-    }
-
-    //this coroutine checks if the NPC has reached it's destination
-    IEnumerator Travelling()
-    {
-        while (Vector3.Distance(transform.position, dest) > 1 || nav.velocity.magnitude > .01f)
+        if (nav.SetDestination(dest))
         {
-            yield return 0;
+            isIdle = false;
+            Debug.Log(this.gameObject + "is travelling");
         }
-        yield return 0;
-        StartCoroutine(Idle(Random.Range(idleTimes.x, idleTimes.y)));
+        else
+        {
+            Debug.Log(this.gameObject + "is idling again");
+            StartCoroutine(Idle(1));
+        }
     }
 }
