@@ -10,13 +10,14 @@ public class DiceSounds : MonoBehaviour
     public AudioClip bounce;
 
     private DiceCharacter owner;
-
+    private AudioSource soundPlayer;
     private bool groudedLastFrame;
 
     // Start is called before the first frame update
     void Start()
     {
         owner = GetComponentInParent<DiceCharacter>();
+        soundPlayer = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,6 +33,9 @@ public class DiceSounds : MonoBehaviour
 
     public void PlayFootstep() 
     {
+        /*soundPlayer.clip = footstep;
+        soundPlayer.pitch = 1f;
+        soundPlayer.Play();*/
         AudioSource.PlayClipAtPoint(footstep, transform.position + Vector3.down, 10f);
     }
 
@@ -42,5 +46,12 @@ public class DiceSounds : MonoBehaviour
 
     public void PlayJumpSound() 
     {
+        soundPlayer.clip = jump;
+        soundPlayer.pitch = Random.Range(0.5f, 1f);
+        soundPlayer.volume = Random.Range(0.3f, 0.5f);
+        soundPlayer.Play();
+
+        
+        //AudioSource.PlayClipAtPoint(jump, transform.position, 20f);
     }
 }

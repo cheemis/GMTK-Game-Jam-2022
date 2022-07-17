@@ -385,6 +385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 763762724405849901}
   - component: {fileID: 5457173367625360366}
+  - component: {fileID: 9008766892437710003}
   m_Layer: 0
   m_Name: Man
   m_TagString: Untagged
@@ -400,7 +401,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945691377811236745}
   m_LocalRotation: {x: -0.7071068, y: -8.6927987e-10, z: 0.0000000048468864, w: 0.7071067}
-  m_LocalPosition: {x: -0.000000057220458, y: 0.000000019669523, z: 0.000000048875812}
+  m_LocalPosition: {x: -0, y: 0.9, z: 0.000000048875812}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -504,6 +505,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.034739494, y: 0.15251637, z: 0.33563936}
     m_Extent: {x: 8.498693, y: 8.363604, z: 2.7646956}
   m_DirtyAABB: 0
+--- !u!136 &9008766892437710003
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945691377811236745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.02
+  m_Height: 0.15
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.09}
 --- !u!1 &981485160943220528
 GameObject:
   m_ObjectHideFlags: 0
