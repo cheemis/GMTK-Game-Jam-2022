@@ -30,6 +30,7 @@ Transform:
   m_Children:
   - {fileID: 1186563962590684930}
   - {fileID: 1728604758265016182}
+  - {fileID: 6713601871996354293}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -58,14 +59,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728604758265016183}
-  m_LocalRotation: {x: -0, y: 0.019653983, z: -0, w: 0.9998069}
-  m_LocalPosition: {x: -2.9986892, y: 0.39040756, z: 0.017048359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.12, y: 15.21, z: -4.32}
   m_LocalScale: {x: 2.5955956, y: 2.3300834, z: 2.5676568}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1728604757156172283}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 2.252, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1728604758265016181
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93,14 +94,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllowedLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 64
   GoalReachedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TestPlayer, Assembly-CSharp
-        m_MethodName: Print
-        m_Mode: 5
+      - m_Target: {fileID: 6309140471961587715}
+        m_TargetAssemblyTypeName: TicketController, Assembly-CSharp
+        m_MethodName: SpawnTicket
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -109,18 +110,51 @@ MonoBehaviour:
           m_StringArgument: Goal Reached
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TestPlayer, Assembly-CSharp
-        m_MethodName: AddScore
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 40
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+--- !u!1 &5657047011546452038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6713601871996354293}
+  - component: {fileID: 6309140471961587715}
+  m_Layer: 0
+  m_Name: TicketSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6713601871996354293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657047011546452038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.23, y: 0.77, z: 16.49}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1728604757156172283}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6309140471961587715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657047011546452038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e89b9ba7e3e87488b28a19966556f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TicketPrefab: {fileID: 1642471218548239716, guid: 4bc162b234793c2489e149c2e5e3eed4, type: 3}
 --- !u!1001 &1728604757699985641
 PrefabInstance:
   m_ObjectHideFlags: 0

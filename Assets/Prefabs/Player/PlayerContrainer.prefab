@@ -1833,42 +1833,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: deb1342bf61c70d438654f39f6f4f360, type: 3}
   m_PrefabInstance: {fileID: 7471844866643653999}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1564827596
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7741752082777229374}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d2ba076a54583f8489b35df460adfca1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1564827597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7741752082777229374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce8a079be5e642e49a2dfa91e5cdcd15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  footstep: {fileID: 8300000, guid: 74e49291f9a6d0840ac3f7d21c83c999, type: 3}
-  jump: {fileID: 0}
-  landing: {fileID: 0}
-  bounce: {fileID: 0}
 --- !u!82 &1551787029637102685
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1965,6 +1929,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1564827596
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7741752082777229374}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2ba076a54583f8489b35df460adfca1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1564827597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7741752082777229374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8a079be5e642e49a2dfa91e5cdcd15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstep: {fileID: 8300000, guid: 74e49291f9a6d0840ac3f7d21c83c999, type: 3}
+  jump: {fileID: 8300000, guid: 83379ace5325c5f4ba5e23addb6ab2f4, type: 3}
+  landing: {fileID: 8300000, guid: 74e49291f9a6d0840ac3f7d21c83c999, type: 3}
+  bounce: {fileID: 8300000, guid: 37169725a8ffd224b87e3a22dae28b75, type: 3}
 --- !u!1001 &7471844866984580768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2275,6 +2275,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footstep: {fileID: 8300000, guid: 74e49291f9a6d0840ac3f7d21c83c999, type: 3}
-  jump: {fileID: 0}
-  landing: {fileID: 0}
-  bounce: {fileID: 0}
+  jump: {fileID: 8300000, guid: 21410379fbadef54ea5c0962e58d688d, type: 3}
+  landing: {fileID: 8300000, guid: 74e49291f9a6d0840ac3f7d21c83c999, type: 3}
+  bounce: {fileID: 8300000, guid: 37169725a8ffd224b87e3a22dae28b75, type: 3}

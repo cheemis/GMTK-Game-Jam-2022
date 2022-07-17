@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Ticket : MonoBehaviour
 {
     public int ticketCount = 1;
+    public AudioClip collection;
     [SerializeField] private UnityEvent CollectEvent = default;
     private void Start() {
         if (CollectEvent == null)
@@ -24,6 +25,7 @@ public class Ticket : MonoBehaviour
         {
             TicketWallet.inst.addTickets(ticketCount);
             CollectEvent.Invoke();
+            AudioSource.PlayClipAtPoint(collection, this.transform.position, 1f);
             Destroy(this.gameObject);
         }
     }
