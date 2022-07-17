@@ -782,7 +782,25 @@ AnimationClip:
     path: Prize Chamber/Bottom/Player Container
   m_ScaleCurves: []
   m_FloatCurves: []
-  m_PPtrCurves: []
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: d00a1ac3be8e0b947a58c2f3ed81912f, type: 2}
+    - time: 17.316668
+      value: {fileID: 2100000, guid: 71c7af74ca0ec744fa7dece46c8744bb, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Prize Chamber/Bottom/Player Container/Dice Character (1)/Armature/Main/Face
+    classID: 23
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: c04c9a207c68f7e47a8fa04388c32b17, type: 2}
+    - time: 17.316668
+      value: {fileID: 2100000, guid: 71c7af74ca0ec744fa7dece46c8744bb, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Prize Chamber/Bottom/Player Container/Dice Character/Armature/Main/Face
+    classID: 23
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -853,7 +871,25 @@ AnimationClip:
       typeID: 4
       customType: 4
       isPPtrCurve: 0
-    pptrCurveMapping: []
+    - serializedVersion: 2
+      path: 2870930738
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 1607207952
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 2100000, guid: d00a1ac3be8e0b947a58c2f3ed81912f, type: 2}
+    - {fileID: 2100000, guid: 71c7af74ca0ec744fa7dece46c8744bb, type: 2}
+    - {fileID: 2100000, guid: c04c9a207c68f7e47a8fa04388c32b17, type: 2}
+    - {fileID: 2100000, guid: 71c7af74ca0ec744fa7dece46c8744bb, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
