@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: adcce033db5f17942abb2ee6db3f2e63, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 1e8e4b367d6fd87428ca78f9addf4330, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 7e956bce139b9a74ba4642043045ce14, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -9076,6 +9076,54 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6514748030225122813, guid: 5f46d47786a37f148b83b72b9298500e, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -1.5075073e+12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514748030225122813, guid: 5f46d47786a37f148b83b72b9298500e, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 1.05e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514748030225122813, guid: 5f46d47786a37f148b83b72b9298500e, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 6.20945e+22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514748030225122813, guid: 5f46d47786a37f148b83b72b9298500e, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 1.8179596e+31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514748030378312070, guid: 5f46d47786a37f148b83b72b9298500e, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -3.1196478e+13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514748030378312070, guid: 5f46d47786a37f148b83b72b9298500e, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 1.05e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514748030378312070, guid: 5f46d47786a37f148b83b72b9298500e, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 3991.2756
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514748030378312070, guid: 5f46d47786a37f148b83b72b9298500e, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 1.8058762e+28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514748030543668971, guid: 5f46d47786a37f148b83b72b9298500e, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514748030543668971, guid: 5f46d47786a37f148b83b72b9298500e, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 1.05e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514748030543668971, guid: 5f46d47786a37f148b83b72b9298500e, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 2.6562857e+20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514748030543668971, guid: 5f46d47786a37f148b83b72b9298500e, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 1.0691825e-38
+      objectReference: {fileID: 0}
     - target: {fileID: 8581592400274892146, guid: 5f46d47786a37f148b83b72b9298500e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -9571,19 +9619,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4606412964277368029, guid: 25ce5d01f475d2a469b94b0cd94417e8, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 2.4548645
+      value: -5.59472e+10
       objectReference: {fileID: 0}
     - target: {fileID: 4606412964277368029, guid: 25ce5d01f475d2a469b94b0cd94417e8, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 0
+      value: 1.05e-43
       objectReference: {fileID: 0}
     - target: {fileID: 4606412964277368029, guid: 25ce5d01f475d2a469b94b0cd94417e8, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 6.617058
+      value: 7.1e-44
       objectReference: {fileID: 0}
     - target: {fileID: 4606412964277368029, guid: 25ce5d01f475d2a469b94b0cd94417e8, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 6.17e-43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4787326924408439169, guid: 25ce5d01f475d2a469b94b0cd94417e8, type: 3}
       propertyPath: m_RootOrder
