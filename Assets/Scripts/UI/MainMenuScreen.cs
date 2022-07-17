@@ -60,19 +60,20 @@ public class MainMenuScreen : MonoBehaviour
     IEnumerator LoadGame()
     {
         yield return new WaitForSeconds(2.1f);
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
     }
 
      IEnumerator LoadNextScene()
     {
         yield return new WaitForSeconds(2.1f);
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadSceneAsync((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
     }
 
      IEnumerator LoadNextSceneAgain()
     {
         yield return new WaitForSeconds(2.1f);
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadSceneAsync((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
     }
+
 
 }

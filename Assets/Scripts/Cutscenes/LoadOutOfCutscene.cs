@@ -19,6 +19,6 @@ public class LoadOutOfCutscene : MonoBehaviour
         {
             AudioManager.Instance.PlayArcadeAmbience();
           }
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadSceneAsync((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
     }
 }
