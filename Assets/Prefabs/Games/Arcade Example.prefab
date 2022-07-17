@@ -77,7 +77,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e89b9ba7e3e87488b28a19966556f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randomScale: 2.5
   TicketPrefab: {fileID: 1642471218548239716, guid: 4bc162b234793c2489e149c2e5e3eed4, type: 3}
+  ticketSpawnSound: {fileID: 8300000, guid: 6b483946f731fc946bf645ccb46a2ed7, type: 3}
 --- !u!1001 &8882655716828845084
 PrefabInstance:
   m_ObjectHideFlags: 0

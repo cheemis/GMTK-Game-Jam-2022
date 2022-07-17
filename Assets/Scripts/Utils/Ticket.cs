@@ -25,7 +25,7 @@ public class Ticket : MonoBehaviour
         {
             TicketWallet.inst.addTickets(ticketCount);
             CollectEvent.Invoke();
-            AudioSource.PlayClipAtPoint(collection, this.transform.position, 1f);
+            AudioSource.PlayClipAtPoint(collection, this.transform.position, 30f);
             Destroy(this.gameObject);
         }
     }
