@@ -149,6 +149,7 @@ public class DiceCharacter : MonoBehaviour
         minJumpSutainTimer = minJumpSustain;
 
         rb.AddForce(new Vector3(0f, metrics.JumpForce * 60f, 0f));
+        audio.PlayJumpSound();
     }
 
     public void Movement(Vector3 inputDir) 
