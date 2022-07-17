@@ -54,7 +54,7 @@ public class NPCPatrol : MonoBehaviour
         Vector2 rand = Random.insideUnitCircle * Random.Range(range.x, range.y);
         Vector3 pos = new Vector3(rand.x, 0, rand.y);
 
-        NavMesh.SamplePosition(pos, out hit, 50, NavMesh.AllAreas);
+        NavMesh.SamplePosition(pos, out hit, 50, nav.areaMask);
 
         dest = hit.position;
         Debug.Log(dest);
