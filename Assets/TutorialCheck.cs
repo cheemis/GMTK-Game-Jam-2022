@@ -11,6 +11,8 @@ public class TutorialCheck : MonoBehaviour
     public GameObject SpacebarExplanation;
     public GameObject LaunchExplanation;
 
+    public Player player;
+
 
     public TMP_Text MovementText;
     public TMP_Text SpacebarText;
@@ -30,20 +32,21 @@ public class TutorialCheck : MonoBehaviour
            MovementExplanation.gameObject.SetActive(true);
            SpacebarExplanation.gameObject.SetActive(true);
            LaunchExplanation.gameObject.SetActive(true);
-           Debug.Log("oop");
+
+           player.controllable = true;
         }
 
-         if ( Input.GetKeyDown(KeyCode.W) == true||Input.GetKeyDown(KeyCode.A) == true ||Input.GetKeyDown(KeyCode.S) == true ||Input.GetKeyDown(KeyCode.D) == true )
+         if (player.controllable && (Input.GetKeyDown(KeyCode.W) == true||Input.GetKeyDown(KeyCode.A) == true ||Input.GetKeyDown(KeyCode.S) == true ||Input.GetKeyDown(KeyCode.D) == true) )
          {
             MovementText.color = Color.green;
          }
            
-         if ( Input.GetKeyDown(KeyCode.Space) == true )
+         if (player.controllable && (Input.GetKeyDown(KeyCode.Space) == true ))
          {
             SpacebarText.color = Color.green;
          }
            
-         if ( Input.GetKeyDown(KeyCode.LeftShift) == true )
+         if (player.controllable && (Input.GetKeyDown(KeyCode.LeftShift) == true ))
          {
             LaunchText.color = Color.green;
          }

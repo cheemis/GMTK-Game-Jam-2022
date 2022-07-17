@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
 
     public Transform cam;
 
+    public bool controllable = false;
+
     private DiceCharacter diceLeft;
     private DiceCharacter diceRight;
 
@@ -40,6 +42,8 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!controllable) { return; }
+
         Vector3 dir = InputDir();
 
 
@@ -55,6 +59,8 @@ public class Player : MonoBehaviour
     private void Update()
     {
         //transform.position = (diceLeft.rb.position + diceRight.rb.position) * 0.5f;
+
+        if(!controllable) { return; }
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
