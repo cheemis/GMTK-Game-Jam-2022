@@ -28,20 +28,12 @@ public class NPCPatrol : MonoBehaviour
         nav.avoidancePriority = Random.Range(0, 50);
 
         NavMeshHit hit;
-        NavMesh.SamplePosition(transform.position, out hit, 50, NavMesh.AllAreas);
+        NavMesh.SamplePosition(transform.position, out hit, 300, nav.areaMask);
         nav.Warp(hit.position);
 
-        if (Random.Range(0, 100) > 50)
-        {
-            Debug.Log("idle");
-            
-        }
-        else
-        {
-            Debug.Log("travel");
-            isIdle = false;
-            SetNewDestination();
-        }
+        Debug.Log("travel");
+        isIdle = false;
+        SetNewDestination();
     }
 
     private void Update()
@@ -50,7 +42,7 @@ public class NPCPatrol : MonoBehaviour
 
         if(!isIdle)
         {
-            if(Vector3.Distance(transform.position, dest) > 1 && nav.velocity.magnitude > .1f)
+            if(Vector3.Distance(transform.position, dest) < 1 || nav.velocity.magnitude > .01f)
             {
                 isIdle = true;
                 StartCoroutine(Idle(Random.Range(idleTimes.x, idleTimes.y)));
@@ -61,6 +53,7 @@ public class NPCPatrol : MonoBehaviour
     //this coroutine waits at a destination before moving to a new position
     IEnumerator Idle(float waitTime)
     {
+        Debug.Log("arrived");
         yield return new WaitForSeconds(waitTime);
         SetNewDestination();
     }
@@ -73,7 +66,7 @@ public class NPCPatrol : MonoBehaviour
         Vector2 rand = Random.insideUnitCircle * Random.Range(range.x, range.y);
         Vector3 pos = new Vector3(rand.x, 0, rand.y);
 
-        NavMesh.SamplePosition(pos, out hit, 200, nav.areaMask);
+        NavMesh.SamplePosition(pos, out hit, 300, nav.areaMask);
 
         dest = hit.position;
 
