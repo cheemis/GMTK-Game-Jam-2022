@@ -1075,6 +1075,7 @@ GameObject:
   - component: {fileID: 7747354317058420687}
   - component: {fileID: 7747354317058420686}
   - component: {fileID: 4202922472788449616}
+  - component: {fileID: 8652447394630743293}
   m_Layer: 5
   m_Name: Main Menu Panel
   m_TagString: Untagged
@@ -1161,6 +1162,18 @@ MonoBehaviour:
   Credits: {fileID: 5619325617308424545}
   blackFade: {fileID: 0}
   audioManager: {fileID: 0}
+--- !u!114 &8652447394630743293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7747354317058420680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572832ff29efd5540833923c24c6e6e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7747354317059244802
 GameObject:
   m_ObjectHideFlags: 0

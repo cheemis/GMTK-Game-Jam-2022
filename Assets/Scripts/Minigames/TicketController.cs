@@ -9,7 +9,7 @@ public class TicketController : MonoBehaviour
     [SerializeField] private AudioClip ticketSpawnSound;
     private GameObject _spawnedTicket = default;
 
-    private float minTimeBetweenSpawns = 0.5f;
+    private float minTimeBetweenSpawns = 1.5f;
     private float lastSpawnTime = 0f;
 
     public void SpawnTicket()

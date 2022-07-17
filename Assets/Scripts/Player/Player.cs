@@ -32,8 +32,6 @@ public class Player : MonoBehaviour
         diceRight = diceObjectRight.GetComponent<DiceCharacter>();
         diceRight.player = this;
 
-        Cursor.lockState = CursorLockMode.Locked;
-
         if(cam == null)
         {
             cam = Camera.main.transform;
@@ -75,7 +73,9 @@ public class Player : MonoBehaviour
     {
         //transform.position = (diceLeft.rb.position + diceRight.rb.position) * 0.5f;
 
-        if(!controllable) { return; }
+        Cursor.lockState = CursorLockMode.Locked;
+
+        if (!controllable) { return; }
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
