@@ -69,6 +69,27 @@ public class DiceCharacter : MonoBehaviour
         //rb.AddTorque(angular);
         rb.angularVelocity = angular * 10f;
 
+        StopAllCoroutines();
+        StartCoroutine(RagdollRoutine());
+    }
+    public void RagdollHit(Vector3 force) 
+    {
+        ragdolling = true;
+        rb.constraints = 0;
+        rb.angularDrag = 0.05f;
+        rb.drag = 0.05f;
+
+        CapsuleCollider capsule = GetComponent<CapsuleCollider>();
+        capsule.enabled = false;
+        GetComponent<BoxCollider>().enabled = true;
+
+        Vector3 angular = force * Random.Range(12f, 25f) * (Random.Range(0f, 1f) > 0.5f ? -1f : 1f);
+        angular += Vector3.Cross(force.normalized, Vector3.up) * (Random.Range(90f, 100f) * -1f);
+
+        rb.AddForce(force);
+        rb.angularVelocity = angular * 10f;
+
+        StopAllCoroutines();
         StartCoroutine(RagdollRoutine());
     }
 

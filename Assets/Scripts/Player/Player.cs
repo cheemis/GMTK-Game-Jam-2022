@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject diceObjectRight;
 
-    [SerializeField]
     private Transform cam;
 
     private DiceCharacter diceLeft;
@@ -30,6 +29,8 @@ public class Player : MonoBehaviour
         diceRight = diceObjectRight.GetComponent<DiceCharacter>();
 
         Cursor.lockState = CursorLockMode.Locked;
+
+        cam = Camera.main.transform;
     }
 
     void FixedUpdate()
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
+            StopAllCoroutines();
             StartCoroutine(JumpRoutine());
         }
 
