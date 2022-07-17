@@ -991,7 +991,7 @@ GameObject:
   - component: {fileID: 7471844867759100088}
   m_Layer: 6
   m_Name: PlayerContrainer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1061,7 +1061,7 @@ GameObject:
   - component: {fileID: 7471844868080229204}
   m_Layer: 6
   m_Name: DiceRight
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 7471844868404120589}
   m_Layer: 6
   m_Name: DiceLeft
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
