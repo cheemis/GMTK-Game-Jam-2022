@@ -20,11 +20,11 @@ public class WhackAMoleMole : MonoBehaviour
         _thisCollider = GetComponent<Collider>();
     }
 
-    private void OnTriggerExit(Collider other) 
+    private void OnTriggerEnter(Collider other) 
     {
         // If the layer is in the layermask, go ahead with the position check.
         // If the bottom of our collider is above the top of the other collider, invoke the event.
-        if ((AllowedLayers.value & 1 << other.gameObject.layer) != 0 && other.bounds.max.y < _thisCollider.bounds.min.y)
+        if ((AllowedLayers.value & 1 << other.gameObject.layer) != 0)
         {
             GoalReachedEvent.Invoke();
         }

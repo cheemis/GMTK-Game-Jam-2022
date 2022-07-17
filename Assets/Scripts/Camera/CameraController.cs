@@ -36,6 +36,8 @@ public class CameraController : MonoBehaviour
         smoothedPosition = cameraOffsetDir * cameraTargetDistance;
 
         Cursor.lockState = CursorLockMode.Locked;
+
+        
     }
 
     // Update is called once per frame
