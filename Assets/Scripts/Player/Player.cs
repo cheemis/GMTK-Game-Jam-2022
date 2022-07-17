@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject diceObjectRight;
 
-    private Transform cam;
+    public Transform cam;
 
     private DiceCharacter diceLeft;
     private DiceCharacter diceRight;
@@ -30,7 +30,10 @@ public class Player : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
 
-        cam = Camera.main.transform;
+        if(cam == null)
+        {
+            cam = Camera.main.transform;
+        }
     }
 
     void FixedUpdate()
