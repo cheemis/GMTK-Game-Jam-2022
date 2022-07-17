@@ -48,7 +48,7 @@ public class DiceSounds : MonoBehaviour
     {
         soundPlayer.clip = jump;
         soundPlayer.pitch = Random.Range(0.5f, 1f);
-        soundPlayer.volume = Random.Range(0.3f, 0.5f);
+        soundPlayer.volume = Random.Range(0.15f, 0.3f);
         soundPlayer.Play();
 
         

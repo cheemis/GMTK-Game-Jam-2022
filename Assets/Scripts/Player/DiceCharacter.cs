@@ -11,6 +11,8 @@ public class DiceCharacter : MonoBehaviour
 
     [HideInInspector]
     public Rigidbody rb;
+    [HideInInspector]
+    public Player player;
     private float groundOffset;
 
     [HideInInspector]
@@ -325,6 +327,14 @@ public class DiceCharacter : MonoBehaviour
         if (ragdolling) 
         {
             audio.PlayDiceCollision();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Reset") 
+        {
+            player.ResetPositions();
         }
     }
 

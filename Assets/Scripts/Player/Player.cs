@@ -26,7 +26,9 @@ public class Player : MonoBehaviour
     void Start()
     {
         diceLeft = diceObjectLeft.GetComponent<DiceCharacter>();
+        diceLeft.player = this;
         diceRight = diceObjectRight.GetComponent<DiceCharacter>();
+        diceRight.player = this;
 
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -226,4 +228,9 @@ public class Player : MonoBehaviour
         //Debug.DrawLine(rightPos, rightPos + Vector3.up, Color.black);
     }
 
+    public void ResetPositions() 
+    {
+        diceLeft.rb.position = transform.parent.position + Vector3.up * 2f - diceLeft.transform.right;
+        diceRight.rb.position = transform.parent.position + Vector3.up * 2f + diceRight.transform.right;
+    }
 }   
