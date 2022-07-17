@@ -72,7 +72,7 @@ public class MainMenuScreen : MonoBehaviour
      IEnumerator LoadNextSceneAgain()
     {
         yield return new WaitForSeconds(2.1f);
-        SceneManager.LoadSceneAsync(3);
+        SceneManager.LoadSceneAsync(2);
     }
 
 }
