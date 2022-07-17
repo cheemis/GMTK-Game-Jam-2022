@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51877087e604f7a4d8713e71052d6f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ticketCount: 1
+  ticketCount: 3
   collection: {fileID: 8300000, guid: 5bf56dba5cab546439b48263f7bd3082, type: 3}
   CollectEvent:
     m_PersistentCalls:
