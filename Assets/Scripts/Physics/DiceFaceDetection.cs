@@ -1,10 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
+using TMPro;
 
 public class DiceFaceDetection : MonoBehaviour
 {
+    public TMP_Text UIDiceTotalText = default;
+    public static Dictionary<string, int> DiceValues = new Dictionary<string, int>();
+    public static Dictionary<string, bool> DiceValuesSet = new Dictionary<string, bool>();
+    [HideInInspector] public string MyIndex = default;
     private Transform _transform = default;
+    private DiceCharacter _diceCharacter = default;
+    private bool _started = false;
+    private bool _diceUpdated = false;
     public int UpFace
     {
         get
@@ -12,10 +22,10 @@ public class DiceFaceDetection : MonoBehaviour
             float[] directions = new float[6]
             {
                 Vector3.Dot( _transform.up, Vector3.up),
-                Vector3.Dot( _transform.forward, Vector3.up),
-                Vector3.Dot( _transform.right, Vector3.up),
-                Vector3.Dot(-_transform.right, Vector3.up),
                 Vector3.Dot(-_transform.forward, Vector3.up),
+                Vector3.Dot(-_transform.right, Vector3.up),
+                Vector3.Dot( _transform.right, Vector3.up),
+                Vector3.Dot( _transform.forward, Vector3.up),
                 Vector3.Dot(-_transform.up, Vector3.up),
             };
 
@@ -34,18 +44,39 @@ public class DiceFaceDetection : MonoBehaviour
         }
     }
     [SerializeField] private int currentDieValue = 0;
-    private void Start() 
+    private void Start()
     {
         _transform = transform;
-    }
-    void Update()
-    {
-        currentDieValue = UpFace;
+        _diceCharacter = GetComponent<DiceCharacter>();
+        _started = true;
+        DiceValuesSet[MyIndex] = false;
 
-        if (Input.GetKeyDown(KeyCode.R))
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (this.enabled && this._started)
         {
-            transform.Translate(Vector3.up * 5, Space.World);
-            transform.Rotate(Random.Range(0, 360.0f), Random.Range(0, 360.0f), Random.Range(0, 360.0f));
+            currentDieValue = UpFace;
+
+            if (_diceCharacter.ragdolling)
+            {
+                DiceValues[MyIndex] = UpFace;
+                UpdateText(UIDiceTotalText);
+
+                _diceUpdated = true;
+            }
+            else if (_diceUpdated)
+            {
+                DiceValuesSet[MyIndex] = true;
+                Debug.Log("Update");
+            }
+
         }
+
+    }
+
+    private static void UpdateText(TMP_Text t)
+    {
+        if (t) t.text = DiceValues.Values.Sum().ToString();
     }
 }
